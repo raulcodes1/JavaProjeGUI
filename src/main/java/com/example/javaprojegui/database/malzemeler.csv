@@ -1,0 +1,28 @@
+id,ad,tur,stok,birim,skt,durum
+1,HCl,Kimyasal,2,Adet,2026-04-12,Kritik
+2,H2SO4,Kimyasal,1,Adet,2025-09-20,KRITIK
+3,Etil Alkol,Kimyasal,4,Adet,2026-11-05,Kritik
+4,NaOH,Kimyasal,3,Adet,2026-02-10,Kritik
+5,Metil Alkol,Kimyasal,2,Adet,2026-01-30,KRITIK
+6,Distile Su,Kimyasal,4,Adet,2027-06-01,Kritik
+7,Sodyum Klorür,Kimyasal,7,Adet,2026-08-14,Aktif
+8,Amonyak,Kimyasal,3,Adet,2026-07-19,Kritik
+9,pH Metre,Elektronik,3,Adet,2026-03-03,AKTIF
+10,Isıtıcı Tabla,Elektronik,5,Adet,2026-09-25,AKTIF
+11,Analitik Terazi,Elektronik,1,Adet,2025-08-08,KRITIK
+12,Güç Kaynağı,Elektronik,3,Adet,2026-12-01,Kritik
+13,Erlenmayer,Cam,8,Adet,2028-01-01,AKTIF
+14,Mezür,Cam,6,Adet,2028-01-01,AKTIF
+15,Büret,Cam,1,Adet,2026-04-22,KRITIK
+16,Cam Baget,Cam,9,Adet,2028-01-01,Aktif
+17,Tartım Kabı,Cam,9,Adet,2028-01-01,AKTIF
+18,Santrifüj,Teknik Cihaz,1,Adet,2026-05-30,KRITIK
+19,Manyetik Karıştırıcı,Teknik Cihaz,2,Adet,2026-10-10,Kritik
+20,Laboratuvar Termometresi,Ölçüm,3,Adet,2027-09-09,Kritik
+21,Higrometre,Ölçüm,1,Adet,2025-10-30,KRITIK
+22,Gas Maskesi,Güvenlik,26,Adet,2029-01-01,Aktif
+23,Koruyucu Gözlük,Güvenlik,32,Adet,2029-01-01,Aktif
+24,Laboratuvar Önlüğü,Güvenlik,28,Adet,2029-01-01,AKTIF
+25,Eldiven,Güvenlik,60,Adet,2029-01-01,Aktif
+26,Oksijen Tüpü,Kimyasal,1,Adet,2025-09-09,KRITIK
+27,Karbondioksit Tüpü,Kimyasal,3,Adet,2026-11-11,AKTIF

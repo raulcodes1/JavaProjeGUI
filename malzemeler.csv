@@ -1,0 +1,27 @@
+id,ad,kategori,miktar,birim
+1,HCl,Kimyasal,3,Adet
+3,Etil Alkol,Kimyasal,4,Adet
+4,NaOH,Kimyasal,3,Adet
+5,Metil Alkol,Kimyasal,2,Adet
+6,Distile Su,Kimyasal,4,Adet
+7,Sodyum Klorür,Kimyasal,7,Adet
+8,Amonyak,Kimyasal,3,Adet
+9,pH Metre,Elektronik,3,Adet
+10,Isıtıcı Tabla,Elektronik,5,Adet
+11,Analitik Terazi,Elektronik,1,Adet
+12,Güç Kaynağı,Elektronik,3,Adet
+13,Erlenmayer,Cam,8,Adet
+14,Mezür,Cam,6,Adet
+15,Büret,Cam,1,Adet
+16,Cam Baget,Cam,9,Adet
+17,Tartım Kabı,Cam,9,Adet
+18,Santrifüj,Teknik Cihaz,1,Adet
+19,Manyetik Karıştırıcı,Teknik Cihaz,2,Adet
+20,Laboratuvar Termometresi,Ölçüm,3,Adet
+21,Higrometre,Ölçüm,1,Adet
+22,Gas Maskesi,Güvenlik,26,Adet
+23,Koruyucu Gözlük,Güvenlik,32,Adet
+24,Laboratuvar Önlüğü,Güvenlik,28,Adet
+25,Eldiven,Güvenlik,60,Adet
+26,Oksijen Tüpü,Kimyasal,1,Adet
+27,Karbondioksit Tüpü,Kimyasal,3,Adet

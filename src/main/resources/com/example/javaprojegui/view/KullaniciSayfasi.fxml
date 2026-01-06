@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.javaprojegui.controller.UserController"
+            prefWidth="900" prefHeight="650">
+
+    <TabPane
+            fx:id="mainTabPane"
+            styleClass="full-width-tabs"
+            AnchorPane.topAnchor="0"
+            AnchorPane.bottomAnchor="0"
+            AnchorPane.leftAnchor="0"
+            AnchorPane.rightAnchor="0">
+
+
+        <!-- ================= ANA SAYFA ================= -->
+        <Tab text="Ana Sayfa">
+            <AnchorPane>
+
+                <!-- HOŞ GELDİN -->
+                <VBox AnchorPane.topAnchor="15"
+                      AnchorPane.leftAnchor="20"
+                      spacing="5">
+                    <Label fx:id="lblWelcome"
+                           text="Hoş Geldiniz"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label fx:id="lblTarih"
+                           text="Bugünün Tarihi"/>
+                </VBox>
+
+                <!-- ÖZET KARTLAR -->
+                <HBox spacing="15"
+                      AnchorPane.topAnchor="80"
+                      AnchorPane.leftAnchor="20"
+                      AnchorPane.rightAnchor="20">
+
+                    <VBox prefHeight="80"
+                          HBox.hgrow="ALWAYS"
+                          style="-fx-background-color:#4CAF50;-fx-padding:10;">
+                        <Label text="Toplam Malzeme" style="-fx-text-fill:white;"/>
+                        <Label fx:id="lblToplam"
+                               style="-fx-font-size:24px;-fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox prefHeight="80"
+                          HBox.hgrow="ALWAYS"
+                          style="-fx-background-color:#F44336;-fx-padding:10;">
+                        <Label text="Kritik Stok" style="-fx-text-fill:white;"/>
+                        <Label fx:id="lblKritik"
+                               style="-fx-font-size:24px;-fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox prefHeight="80"
+                          HBox.hgrow="ALWAYS"
+                          style="-fx-background-color:#2196F3;-fx-padding:10;">
+                        <Label text="Malzeme Türleri" style="-fx-text-fill:white;"/>
+                        <Label fx:id="lblTur"
+                               style="-fx-font-size:24px;-fx-text-fill:white;"/>
+                    </VBox>
+
+                    <VBox prefHeight="80"
+                          HBox.hgrow="ALWAYS"
+                          style="-fx-background-color:#FF9800;-fx-padding:10;">
+                        <Label text="Sepet" style="-fx-text-fill:white;"/>
+                        <Label fx:id="lblSepet"
+                               style="-fx-font-size:24px;-fx-text-fill:white;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- ALT ALAN -->
+                <HBox spacing="20"
+                      AnchorPane.topAnchor="190"
+                      AnchorPane.leftAnchor="20"
+                      AnchorPane.rightAnchor="20"
+                      AnchorPane.bottomAnchor="20">
+
+                    <!-- SOL: UYARILAR -->
+                    <VBox spacing="10" prefWidth="260">
+                        <Label text="Uyarılar"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+                        <ListView fx:id="uyariListView"
+                                  VBox.vgrow="ALWAYS"/>
+                    </VBox>
+
+                    <!-- ORTA: SON İŞLEMLER -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label text="Son İşlemler"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+                        <TableView fx:id="sonIslemlerTable"
+                                   VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colTarih"
+                                             text="Tarih"
+                                             prefWidth="120"/>
+                                <TableColumn fx:id="colIslem"
+                                             text="İşlem"
+                                             prefWidth="160"/>
+                                <TableColumn fx:id="colMalzeme"
+                                             text="Malzeme"
+                                             prefWidth="200"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+
+                    <!-- SAĞ: GRAFİK -->
+                    <VBox spacing="10"
+                          prefWidth="320"
+                          style="-fx-padding:15;">
+
+                        <Label text="Malzeme Kategori Dağılımı"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+
+                        <PieChart fx:id="kategoriPieChart"
+                                  prefHeight="300"/>
+
+                        <Label text="Grafik: CSV verilerine göre"/>
+                    </VBox>
+
+                </HBox>
+
+
+            </AnchorPane>
+        </Tab>
+
+
+        <!-- ================= MALZEMELER ================= -->
+        <Tab text="Malzemeler" fx:id="tabMalzemeler">
+            <AnchorPane>
+
+                <HBox spacing="15"
+                      AnchorPane.topAnchor="10"
+                      AnchorPane.bottomAnchor="10"
+                      AnchorPane.leftAnchor="10"
+                      AnchorPane.rightAnchor="10">
+
+                    <!-- ===== SOL: GENİŞ TABLO ===== -->
+                    <TableView fx:id="tblMalzemeler"
+                               HBox.hgrow="ALWAYS"
+                               prefWidth="650">
+
+                        <columns>
+                            <TableColumn fx:id="colAd"
+                                         text="Malzeme Adı"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colTur"
+                                         text="Kategori"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colStok"
+                                         text="Stok"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colDurum"
+                                         text="Durum"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colSonGuncellenme"
+                                         text="Son Güncellenme"
+                                         prefWidth="150"/>
+                        </columns>
+
+                    </TableView>
+
+                    <!-- ===== SAĞ: FİLTRE + BUTONLAR ===== -->
+                    <VBox spacing="14"
+                          prefWidth="240"
+                          alignment="TOP_CENTER"
+                          style="-fx-background-color:#f5f5f5;-fx-padding:15;">
+
+                        <!-- FİLTRE BAŞLIK -->
+                        <Label text="Malzeme Filtrele"
+                               style="-fx-font-size:15px;-fx-font-weight:bold;"/>
+
+                        <!-- ARAMA -->
+                        <TextField fx:id="txtAra"
+                                   promptText="Malzeme ara..."
+                                   maxWidth="Infinity"/>
+
+                        <!-- KRİTİK -->
+                        <HBox alignment="CENTER">
+                            <CheckBox fx:id="chkKritik"
+                                      text="Kritik Stok"/>
+                        </HBox>
+
+                        <Separator/>
+
+                        <!-- BUTONLAR -->
+                        <Button text="Malzeme Ekle"
+                                onAction="#onMalzemeEkle"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#2563EB;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Malzeme Güncelle"
+                                onAction="#onMalzemeGuncelle"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#0EA5E9;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Malzeme Sil"
+                                onAction="#handleSil"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#DC2626;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Sepete ekle"
+                                onAction="#onSepeteEkle"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#22C55E;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+
+                    </VBox>
+
+                </HBox>
+            </AnchorPane>
+        </Tab>
+
+
+        <!-- ================= SEPET ================= -->
+        <Tab text="Sepetim">
+            <AnchorPane>
+
+                <HBox spacing="15"
+                      AnchorPane.topAnchor="10"
+                      AnchorPane.bottomAnchor="10"
+                      AnchorPane.leftAnchor="10"
+                      AnchorPane.rightAnchor="10">
+
+                    <!-- ===== SOL: SEPET TABLO ===== -->
+                    <TableView fx:id="tblSepet"
+                               HBox.hgrow="ALWAYS"
+                               prefWidth="650">
+
+                        <columns>
+                            <TableColumn fx:id="colSepetAd"
+                                         text="Malzeme"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colSepetKategori"
+                                         text="Kategori"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colSepetMiktar"
+                                         text="Miktar"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colSepetStok"
+                                         text="Stok"
+                                         prefWidth="150"/>
+
+                            <TableColumn fx:id="colSepetDurum"
+                                         text="Durum"
+                                         prefWidth="150"/>
+                        </columns>
+
+                    </TableView>
+
+                    <!-- ===== SAĞ: FİLTRE + BUTONLAR ===== -->
+                    <VBox spacing="14"
+                          prefWidth="240"
+                          alignment="TOP_CENTER"
+                          style="-fx-background-color:#f5f5f5;-fx-padding:15;">
+
+                        <Label text="Sepet Filtrele"
+                               style="-fx-font-size:15px;-fx-font-weight:bold;"/>
+
+                        <TextField fx:id="txtSepetAra"
+                                   promptText="Malzeme ara..."
+                                   maxWidth="Infinity"/>
+
+                        <CheckBox fx:id="chkYetersiz"
+                                  text="Kiritik Stok"/>
+
+                        <Separator/>
+
+                        <Button text="Seçiliyi Kaldır"
+                                onAction="#onSepettenCikar"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#64748B;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Sepeti Temizle"
+                                onAction="#onSepetiTemizle"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#DC2626;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Deneyi Onayla"
+                                onAction="#onDeneyOnayla"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#16A34A;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                    </VBox>
+
+                </HBox>
+
+            </AnchorPane>
+        </Tab>
+
+
+        <Tab text="Deneyler">
+            <AnchorPane>
+                <HBox spacing="15"
+                      AnchorPane.topAnchor="10"
+                      AnchorPane.bottomAnchor="10"
+                      AnchorPane.leftAnchor="10"
+                      AnchorPane.rightAnchor="10">
+
+                    <!-- TABLO -->
+                    <TableView fx:id="tblDeneyler" HBox.hgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colDeneyId" text="Deney ID"/>
+                            <TableColumn fx:id="colDeneyTarih" text="Tarih"/>
+                            <TableColumn fx:id="colDeneyToplam" text="Toplam Malzeme"/>
+                            <TableColumn fx:id="colDeneyMiktar" text="Toplam Miktar"/>
+                            <TableColumn fx:id="colDeneyAciklama" text="Açıklama"/>
+                        </columns>
+                    </TableView>
+
+                    <!-- FILTRELE VE BUTONLAR -->
+                    <VBox spacing="14"
+                          prefWidth="240"
+                          alignment="TOP_CENTER"
+                          style="-fx-background-color:#f5f5f5;-fx-padding:15;">
+                        <!-- ===== FILTRE ===== -->
+                        <Label text="Deney Filtrele"
+                               style="-fx-font-size:15px;-fx-font-weight:bold;"/>
+
+                        <TextField fx:id="txtDeneyAra"
+                                   promptText="Deney ara..."
+                                   maxWidth="Infinity"/>
+
+                        <Separator/>
+
+                        <Button text="Detay Gör"
+                                 onAction="#onDeneyDetay"
+                                 maxWidth="Infinity"
+                                 style="-fx-background-color:#2563EB;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Deneyi Sil"
+                                onAction="#onDeneySil"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#DC2626;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+                        <Button text="Yenile"
+                                onAction="#loadDeneyler"
+                                maxWidth="Infinity"
+                                style="-fx-background-color:#64748B;-fx-text-fill:white;-fx-font-weight:bold;"/>
+
+
+                    </VBox>
+
+
+                </HBox>
+            </AnchorPane>
+        </Tab>
+
+
+        <!-- ================= PROFİL ================= -->
+        <Tab text="Profilim">
+            <AnchorPane>
+
+                <VBox spacing="20"
+                      alignment="TOP_CENTER"
+                      AnchorPane.topAnchor="30"
+                      AnchorPane.leftAnchor="30"
+                      AnchorPane.rightAnchor="30">
+
+                    <!-- ===== KULLANICI BİLGİLERİ ===== -->
+                    <VBox spacing="8" prefWidth="400">
+                        <Label text="Kullanıcı Bilgileri"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+
+                        <TextField fx:id="txtProfilUsername"
+                                   promptText="Kullanıcı Adı"
+                                   disable="true"/>
+
+                        <TextField fx:id="txtProfilEmail"
+                                   promptText="Email"
+                                   disable="true"/>
+
+                        <TextField fx:id="txtProfilRole"
+                                   promptText="Rol"
+                                   disable="true"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <!-- ===== ŞİFRE DEĞİŞTİR ===== -->
+                    <VBox spacing="10" prefWidth="400">
+                        <Label text="Şifre Değiştir"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+
+                        <PasswordField fx:id="txtEskiSifre"
+                                       promptText="Eski Şifre"/>
+
+                        <PasswordField fx:id="txtYeniSifre"
+                                       promptText="Yeni Şifre"/>
+
+                        <PasswordField fx:id="txtYeniSifreTekrar"
+                                       promptText="Yeni Şifre (Tekrar)"/>
+
+                        <Button text="Şifreyi Değiştir"
+                                onAction="#onSifreDegistir"
+                                style="-fx-background-color:#2563EB;-fx-text-fill:white;-fx-font-weight:bold;"/>
+                    </VBox>
+
+                    <Separator/>
+
+                    <!-- ===== OTURUM ===== -->
+                    <VBox spacing="10" prefWidth="400">
+                        <Label text="Oturum"
+                               style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+
+                        <Button text="Çıkış Yap"
+                                onAction="#onCikisYap"
+                                style="-fx-background-color:#DC2626;-fx-text-fill:white;-fx-font-weight:bold;"/>
+                    </VBox>
+
+                </VBox>
+
+            </AnchorPane>
+        </Tab>
+
+    </TabPane>
+</AnchorPane>

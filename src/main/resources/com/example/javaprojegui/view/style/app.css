@@ -1,0 +1,26 @@
+/* TAB BAR TAM GENİŞLİK */
+.tab-pane .tab-header-area {
+    -fx-padding: 0;
+}
+
+/* TAB ARKAPLAN */
+.tab-pane .tab-header-background {
+    -fx-background-color: #222;
+}
+
+/* TABLAR EŞİT */
+.tab-pane .tab {
+    -fx-pref-width: 25%;
+    -fx-alignment: CENTER;
+}
+
+/* TAB YAZI */
+.tab-pane .tab-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* SEÇİLİ TAB */
+.tab-pane .tab:selected {
+    -fx-background-color: #4CAF50;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javaprojegui.controller.AdminController">
+
+    <center>
+        <TabPane>
+            <Tab text="Malzemeler" closable="false">
+                <BorderPane>
+                    <center>
+                        <TableView fx:id="MalzemlertableView">
+                            <columns>
+                                <TableColumn fx:id="MalzemeID" text="Malzeme ID"/>
+                                <TableColumn fx:id="MalzemeAdi" text="Malzeme Adı"/>
+                                <TableColumn fx:id="Kategori" text="Kategori"/>
+                                <TableColumn fx:id="Miktar" text="Miktar"/>
+                                <TableColumn fx:id="Birim" text="Birim"/>
+                            </columns>
+                        </TableView>
+                    </center>
+
+                    <bottom>
+                        <HBox spacing="10" alignment="CENTER">
+                            <Button fx:id="Malzeme_ekle" text="Yeni Malzeme Ekle" onAction="#malzeme_Ekle"/>
+                            <Button fx:id="Malzeme_guncelle" text="Malzeme Güncelle" onAction="#malzeme_Guncelle"/>
+                            <Button fx:id="Malzeme_sil" text="Malzeme Sil" onAction="#malzeme_Sil"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </Tab>
+
+            <!-- KİMYASALLAR -->
+            <Tab text="Kimyasallar" closable="false">
+                <BorderPane>
+                    <center>
+                        <TableView fx:id="KimyasallartableView">
+                            <columns>
+                                <TableColumn fx:id="KimyasalID" text="Kimyasal ID"/>
+                                <TableColumn fx:id="KimyasalAdi" text="Kimyasal Adı"/>
+                                <TableColumn fx:id="TehlikeSinifi" text="Tehlike Sınıfı"/>
+                                <TableColumn fx:id="K_Miktar" text="Miktar"/>
+                                <TableColumn fx:id="SonKullanmaTarihi" text="Son Kullanma"/>
+                            </columns>
+                        </TableView>
+                    </center>
+
+                    <!-- 👇 ESKİ BUTONLAR AYNI -->
+                    <bottom>
+                        <HBox spacing="10" alignment="CENTER">
+                            <Button fx:id="Kimyasal_ekle" text="Yeni Kimyasal Ekle" onAction="#kimyasal_Ekle"/>
+                            <Button fx:id="Kimyasal_guncelle" text="Kimyasal Güncelle" onAction="#kimyasal_Guncelle"/>
+                            <Button fx:id="Kimyasal_sil" text="Kimyasal Sil" onAction="#kimyasal_Sil"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </Tab>
+
+            <!-- STOK -->
+            <Tab text="Stok Hareketleri" closable="false">
+                <BorderPane>
+                    <center>
+                        <TableView fx:id="stokTableView">
+                            <columns>
+                                <TableColumn fx:id="HareketID" text="Hareket ID"/>
+                                <TableColumn fx:id="UrunAdi" text="Ürün Adı"/>
+                                <TableColumn fx:id="Giris_Cikis" text="Giriş / Çıkış"/>
+                                <TableColumn fx:id="S_Miktar" text="Miktar"/>
+                                <TableColumn fx:id="Tarih" text="Tarih"/>
+                            </columns>
+                        </TableView>
+                    </center>
+
+                    <!-- 👇 ESKİ BUTONLAR AYNI -->
+                    <bottom>
+                        <HBox spacing="10" alignment="CENTER">
+                            <Button fx:id="StokHareket_Ekle" text="Yeni Stok Hareketi Ekle" onAction="#stok_Ekle"/>
+                            <Button fx:id="StokHareket_guncelle" text="Stok Hareketi Güncelle" onAction="#stok_Guncelle"/>
+                            <Button fx:id="StokHareket_sil" text="Stok Hareketi Sil" onAction="#stok_Sil"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </Tab>
+
+            <!-- KULLANICI -->
+            <Tab text="Kullanıcı Yönetimi" closable="false">
+                <BorderPane>
+                    <center>
+                        <TableView fx:id="KullaniciYonetimitableView">
+                            <columns>
+                                <TableColumn fx:id="KullaniciID" text="Kullanıcı ID"/>
+                                <TableColumn fx:id="Ad_Soyad" text="Ad Soyad"/>
+                                <TableColumn fx:id="Rol" text="Rol"/>
+                            </columns>
+                        </TableView>
+                    </center>
+
+                    <!-- 👇 ESKİ BUTONLAR AYNI -->
+                    <bottom>
+                        <HBox spacing="10" alignment="CENTER">
+                            <Button fx:id="Kullanici_Ekle" text="Yeni Kullanıcı Ekle" onAction="#kullanici_Ekle"/>
+                            <Button fx:id="Kullanici_guncelle" text="Kullanıcı Güncelle" onAction="#kullanici_Guncelle"/>
+                            <Button fx:id="Kullanici_sil" text="Kullanıcı Sil" onAction="#kullanici_Sil"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </Tab>
+
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="cikisBtn"
+                    text="Çıkış Yap"
+                    onAction="#cikisYap"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
