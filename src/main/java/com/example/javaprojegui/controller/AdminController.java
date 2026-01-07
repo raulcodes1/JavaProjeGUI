@@ -151,7 +151,7 @@ public class AdminController {
         stokTableView.getItems().setAll(AdminCSVUtil.stokOku("stokadmin.csv"));
         MalzemlertableView.getItems().setAll(AdminCSVUtil.malzemeOku("malzemeler.csv"));
         KimyasallartableView.getItems().setAll(AdminCSVUtil.kimyasalOku("kimyasallaradmin.csv"));
-        KullaniciYonetimitableView.getItems().setAll(AdminCSVUtil.kullaniciOku("kullanicilaradmin.csv"));
+        KullaniciYonetimitableView.getItems().setAll(AdminCSVUtil.kullaniciOku("kullaniciadmin.csv"));
     }
 
     @FXML
@@ -161,10 +161,15 @@ public class AdminController {
         dialog.setTitle("Stok Ekle");
 
         TextField urun = new TextField();
+        urun.setPromptText("Ürün Adı");
         ComboBox<String> tip = new ComboBox<>();
         tip.getItems().addAll("GİRİŞ", "ÇIKIŞ");
+        tip.setPromptText("Giriş / Çıkış");
         TextField miktar = new TextField();
+        miktar.setPromptText("Miktar");
+
         DatePicker tarih = new DatePicker();
+        tarih.setPromptText("Tarih");
 
         dialog.getDialogPane().setContent(new VBox(10, urun, tip, miktar, tarih));
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -224,7 +229,7 @@ public class AdminController {
             DiyalogUtil.uyari("Uyarı", "Stok hareketi seçiniz");
             return;
         }
-        if (DiyalogUtil.onayAl("Onay","Stok hareketi mi?")){
+        if (DiyalogUtil.onayAl("Onay","Stok hareketi silinsin mi?")){
             stokTableView.getItems().remove(secili);
             AdminCSVUtil.stokKaydet(stokTableView.getItems(),"stokadmin.csv");}
     }
@@ -236,9 +241,13 @@ public class AdminController {
         dialog.setTitle("Malzeme Ekle");
 
         TextField ad = new TextField();
+        ad.setPromptText("Ürün adı");
         TextField kategori = new TextField();
+        kategori.setPromptText("Kategori");
         TextField miktar = new TextField();
+        miktar.setPromptText("Miktar");
         TextField birim = new TextField();
+        birim.setPromptText("Birim");
 
         dialog.getDialogPane().setContent(new VBox(10, ad, kategori, miktar, birim));
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -311,10 +320,14 @@ public class AdminController {
         dialog.setTitle("Kimyasal Ekle");
 
         TextField ad = new TextField();
+        ad.setPromptText("Kimyasal adı");
         ComboBox<String> tehlike = new ComboBox<>();
         tehlike.getItems().addAll("Yanıcı", "Zehirli", "Aşındırıcı", "Patlayıcı");
+        tehlike.setPromptText("Tehlike sınıfı");
         TextField miktar = new TextField();
+        miktar.setPromptText("Miktar");
         DatePicker tarih = new DatePicker();
+        tarih.setPromptText("Tarih");
 
         dialog.getDialogPane().setContent(new VBox(10, ad, tehlike, miktar, tarih));
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -387,8 +400,10 @@ public class AdminController {
         dialog.setTitle("Kullanıcı Ekle");
 
         TextField adSoyad = new TextField();
+        adSoyad.setPromptText("Ad ve soyad");
         ComboBox<String> rol = new ComboBox<>();
         rol.getItems().addAll("Admin", "Kullanıcı");
+        rol.setPromptText("Rol");
 
         dialog.getDialogPane().setContent(new VBox(10, adSoyad, rol));
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
@@ -456,7 +471,7 @@ public class AdminController {
         }
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/com/example/javaprojegui/Login.fxml")
+                    getClass().getResource("/com/example/javaprojegui/view/Login.fxml")
             );
             Parent root = loader.load();
 
