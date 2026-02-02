@@ -9,101 +9,99 @@
 
     <center>
         <TabPane>
-            <Tab text="Malzemeler" closable="false">
+            <!-- MATERIALS -->
+            <Tab text="Materials" closable="false">
                 <BorderPane>
                     <center>
                         <TableView fx:id="MalzemlertableView">
                             <columns>
-                                <TableColumn fx:id="MalzemeID" text="Malzeme ID"/>
-                                <TableColumn fx:id="MalzemeAdi" text="Malzeme Adı"/>
-                                <TableColumn fx:id="Kategori" text="Kategori"/>
-                                <TableColumn fx:id="Miktar" text="Miktar"/>
-                                <TableColumn fx:id="Birim" text="Birim"/>
+                                <TableColumn fx:id="MalzemeID" text="Material ID"/>
+                                <TableColumn fx:id="MalzemeAdi" text="Material Name"/>
+                                <TableColumn fx:id="Kategori" text="Category"/>
+                                <TableColumn fx:id="Miktar" text="Quantity"/>
+                                <TableColumn fx:id="Birim" text="Unit"/>
                             </columns>
                         </TableView>
                     </center>
 
                     <bottom>
                         <HBox spacing="10" alignment="CENTER">
-                            <Button fx:id="Malzeme_ekle" text="Yeni Malzeme Ekle" onAction="#malzeme_Ekle"/>
-                            <Button fx:id="Malzeme_guncelle" text="Malzeme Güncelle" onAction="#malzeme_Guncelle"/>
-                            <Button fx:id="Malzeme_sil" text="Malzeme Sil" onAction="#malzeme_Sil"/>
+                            <Button fx:id="Malzeme_ekle" text="Add New Material" onAction="#malzeme_Ekle"/>
+                            <Button fx:id="Malzeme_guncelle" text="Update Material" onAction="#malzeme_Guncelle"/>
+                            <Button fx:id="Malzeme_sil" text="Delete Material" onAction="#malzeme_Sil"/>
                         </HBox>
                     </bottom>
                 </BorderPane>
             </Tab>
 
-            <!-- KİMYASALLAR -->
-            <Tab text="Kimyasallar" closable="false">
+            <!-- CHEMICALS -->
+            <Tab text="Chemicals" closable="false">
                 <BorderPane>
                     <center>
                         <TableView fx:id="KimyasallartableView">
                             <columns>
-                                <TableColumn fx:id="KimyasalID" text="Kimyasal ID"/>
-                                <TableColumn fx:id="KimyasalAdi" text="Kimyasal Adı"/>
-                                <TableColumn fx:id="TehlikeSinifi" text="Tehlike Sınıfı"/>
-                                <TableColumn fx:id="K_Miktar" text="Miktar"/>
-                                <TableColumn fx:id="SonKullanmaTarihi" text="Son Kullanma"/>
+                                <TableColumn fx:id="KimyasalID" text="Chemical ID"/>
+                                <TableColumn fx:id="KimyasalAdi" text="Chemical Name"/>
+                                <TableColumn fx:id="TehlikeSinifi" text="Hazard Class"/>
+                                <TableColumn fx:id="K_Miktar" text="Quantity"/>
+                                <TableColumn fx:id="SonKullanmaTarihi" text="Expiration Date"/>
                             </columns>
                         </TableView>
                     </center>
 
-                    <!-- 👇 ESKİ BUTONLAR AYNI -->
                     <bottom>
                         <HBox spacing="10" alignment="CENTER">
-                            <Button fx:id="Kimyasal_ekle" text="Yeni Kimyasal Ekle" onAction="#kimyasal_Ekle"/>
-                            <Button fx:id="Kimyasal_guncelle" text="Kimyasal Güncelle" onAction="#kimyasal_Guncelle"/>
-                            <Button fx:id="Kimyasal_sil" text="Kimyasal Sil" onAction="#kimyasal_Sil"/>
+                            <Button fx:id="Kimyasal_ekle" text="Add New Chemical" onAction="#kimyasal_Ekle"/>
+                            <Button fx:id="Kimyasal_guncelle" text="Update Chemical" onAction="#kimyasal_Guncelle"/>
+                            <Button fx:id="Kimyasal_sil" text="Delete Chemical" onAction="#kimyasal_Sil"/>
                         </HBox>
                     </bottom>
                 </BorderPane>
             </Tab>
 
-            <!-- STOK -->
-            <Tab text="Stok Hareketleri" closable="false">
+            <!-- STOCK MOVEMENTS -->
+            <Tab text="Stock Movements" closable="false">
                 <BorderPane>
                     <center>
                         <TableView fx:id="stokTableView">
                             <columns>
-                                <TableColumn fx:id="HareketID" text="Hareket ID"/>
-                                <TableColumn fx:id="UrunAdi" text="Ürün Adı"/>
-                                <TableColumn fx:id="Giris_Cikis" text="Giriş / Çıkış"/>
-                                <TableColumn fx:id="S_Miktar" text="Miktar"/>
-                                <TableColumn fx:id="Tarih" text="Tarih"/>
+                                <TableColumn fx:id="HareketID" text="Movement ID"/>
+                                <TableColumn fx:id="UrunAdi" text="Product Name"/>
+                                <TableColumn fx:id="Giris_Cikis" text="In / Out"/>
+                                <TableColumn fx:id="S_Miktar" text="Quantity"/>
+                                <TableColumn fx:id="Tarih" text="Date"/>
                             </columns>
                         </TableView>
                     </center>
 
-                    <!-- 👇 ESKİ BUTONLAR AYNI -->
                     <bottom>
                         <HBox spacing="10" alignment="CENTER">
-                            <Button fx:id="StokHareket_Ekle" text="Yeni Stok Hareketi Ekle" onAction="#stok_Ekle"/>
-                            <Button fx:id="StokHareket_guncelle" text="Stok Hareketi Güncelle" onAction="#stok_Guncelle"/>
-                            <Button fx:id="StokHareket_sil" text="Stok Hareketi Sil" onAction="#stok_Sil"/>
+                            <Button fx:id="StokHareket_Ekle" text="Add Stock Movement" onAction="#stok_Ekle"/>
+                            <Button fx:id="StokHareket_guncelle" text="Update Stock Movement" onAction="#stok_Guncelle"/>
+                            <Button fx:id="StokHareket_sil" text="Delete Stock Movement" onAction="#stok_Sil"/>
                         </HBox>
                     </bottom>
                 </BorderPane>
             </Tab>
 
-            <!-- KULLANICI -->
-            <Tab text="Kullanıcı Yönetimi" closable="false">
+            <!-- USER MANAGEMENT -->
+            <Tab text="User Management" closable="false">
                 <BorderPane>
                     <center>
                         <TableView fx:id="KullaniciYonetimitableView">
                             <columns>
-                                <TableColumn fx:id="KullaniciID" text="Kullanıcı ID"/>
-                                <TableColumn fx:id="Ad_Soyad" text="Ad Soyad"/>
-                                <TableColumn fx:id="Rol" text="Rol"/>
+                                <TableColumn fx:id="KullaniciID" text="User ID"/>
+                                <TableColumn fx:id="Ad_Soyad" text="Full Name"/>
+                                <TableColumn fx:id="Rol" text="Role"/>
                             </columns>
                         </TableView>
                     </center>
 
-                    <!-- 👇 ESKİ BUTONLAR AYNI -->
                     <bottom>
                         <HBox spacing="10" alignment="CENTER">
-                            <Button fx:id="Kullanici_Ekle" text="Yeni Kullanıcı Ekle" onAction="#kullanici_Ekle"/>
-                            <Button fx:id="Kullanici_guncelle" text="Kullanıcı Güncelle" onAction="#kullanici_Guncelle"/>
-                            <Button fx:id="Kullanici_sil" text="Kullanıcı Sil" onAction="#kullanici_Sil"/>
+                            <Button fx:id="Kullanici_Ekle" text="Add New User" onAction="#kullanici_Ekle"/>
+                            <Button fx:id="Kullanici_guncelle" text="Update User" onAction="#kullanici_Guncelle"/>
+                            <Button fx:id="Kullanici_sil" text="Delete User" onAction="#kullanici_Sil"/>
                         </HBox>
                     </bottom>
                 </BorderPane>
@@ -111,10 +109,11 @@
 
         </TabPane>
     </center>
+
     <bottom>
         <HBox alignment="CENTER_RIGHT" spacing="10">
             <Button fx:id="cikisBtn"
-                    text="Çıkış Yap"
+                    text="Logout"
                     onAction="#cikisYap"/>
         </HBox>
     </bottom>

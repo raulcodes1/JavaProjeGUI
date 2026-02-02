@@ -8,38 +8,37 @@
            fx:controller="com.example.javaprojegui.controller.LoginController"
            prefWidth="360" prefHeight="420">
 
-    <!-- ORTA KART -->
+    <!-- CENTER CARD -->
     <VBox alignment="CENTER" spacing="12"
           prefWidth="280"
           style="-fx-background-color: white;
                  -fx-padding: 25;
                  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);">
 
-        <Label text="Deney Takip Sistemi"
+        <Label text="Experiment Tracking System"
                style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
         <TextField fx:id="txtUsername"
-                   promptText="Kullanıcı Adı"
+                   promptText="Username"
                    prefWidth="220"
                    maxWidth="220"/>
 
-
         <PasswordField fx:id="txtPassword"
-                       promptText="Şifre"
+                       promptText="Password"
                        prefWidth="220"
                        maxWidth="220"/>
 
-        <Button text="Giriş Yap"
+        <Button text="Login"
                 prefWidth="220"
                 style="-fx-background-color: #2a5298; -fx-text-fill: white;"
                 onAction="#handleLogin"/>
 
-        <Button text="Şifremi Unuttum"
+        <Button text="Forgot Password"
                 prefWidth="220"
                 style="-fx-background-color: #6c757d; -fx-text-fill: white;"
                 onAction="#openForgotPassword"/>
 
-        <Button text="Kayıt Ol"
+        <Button text="Register"
                 prefWidth="220"
                 style="-fx-background-color: transparent; -fx-text-fill: #2a5298;"
                 onAction="#openRegister"/>

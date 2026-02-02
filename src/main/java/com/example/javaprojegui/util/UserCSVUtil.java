@@ -43,11 +43,11 @@ public class UserCSVUtil {
                 String[] d = line.split(",");
 
                 list.add(new Malzeme(
-                        d[1],                    // ad
-                        d[2],                    // tür
-                        Integer.parseInt(d[3]),  // stok
-                        d[6],                    // durum
-                        d[5]                     // son güncellenme
+                        d[0],                    // ad
+                        d[1],                    // tür
+                        Integer.parseInt(d[2]),  // stok
+                        d[3],                    // durum
+                        d[4]                     // son güncellenme
                 ));
             }
 
